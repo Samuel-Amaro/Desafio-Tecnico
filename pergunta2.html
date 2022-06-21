@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Exe 02</title>
+</head>
+<body>
+    
+    <script>
+        
+        let input = prompt("Informe um número: ", 0);
+        input = parseInt(input);
+        
+        function fib(number) {
+            let start = 0, currentNumberFib = 0;
+            if(currentNumberFib < number) {
+                currentNumberFib = fib(start);
+                console.log(currentNumberFib);
+            }   
+        }
+
+        fib(input);
+    </script>
+</body>
+</html>
