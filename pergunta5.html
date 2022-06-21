@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Exe 05</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        let str = "Olá! Pequenos gafanhotos.";
+
+        function inverter(str) {
+            let strInversa = '';
+            for(let i = str.length - 1; i >= 0; i--) {
+                strInversa = strInversa + str[i];
+            }
+            return strInversa;
+        }
+
+        console.log(`String normal: ${str}`);
+        console.log(`String inversa: ${inverter(str)}`);
+    </script>
+    
+</body>
+</html>

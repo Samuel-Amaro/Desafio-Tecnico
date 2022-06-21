@@ -8,13 +8,31 @@
 <body>
     
     <script type="text/javascript">
-        let faturamentoMensal = new Map([
+        let faturamentoMensal = [
             {estado: "SP", valor: 67836.43},
             {estado: "RJ", valor: 36678.66},
             {estado: "MG", valor: 29229.88},
             {estado: "ES", valor: 27165.48},
             {estado: "outros", valor: 19849.53}
-        ]);
+        ];
+
+        //valor de referencia que corresponde a 100%
+        let totalFaturamentoMensal = faturamentoMensal.reduce((accumulator, currentValue) => {
+            return accumulator + currentValue.valor;
+        }, 0);
+
+        function obterPorcentagem(faturamentoEstado, faturamentoMensalTotal) {
+            let porcentagemDecimal = faturamentoEstado.valor / faturamentoMensalTotal;
+            return (porcentagemDecimal * 100).toFixed(2);
+        }
+
+        function print() {
+            faturamentoMensal.forEach((e) => {
+                console.log(`${e.estado} faturamento de R$ ${e.valor} e igual a ${obterPorcentagem(e, totalFaturamentoMensal)}% de R$ ${totalFaturamentoMensal}`);
+            });
+        }
+        
+        print();
     </script>
 </body>
 </html>

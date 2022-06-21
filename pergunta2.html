@@ -9,18 +9,27 @@
     
     <script>
         
-        let input = prompt("Informe um número: ", 0);
-        input = parseInt(input);
+        let input = 34, seqFib = [0, 1], previousNumber = 0, currentNumber = 0, currentIndex = 0;
         
         function fib(number) {
-            let start = 0, currentNumberFib = 0;
-            if(currentNumberFib < number) {
-                currentNumberFib = fib(start);
-                console.log(currentNumberFib);
-            }   
+            currentIndex = seqFib.length - 1;
+            currentNumber = seqFib[currentIndex];
+            currentIndex =  currentIndex - 1;
+            previousNumber = seqFib[currentIndex];
+            seqFib.push(previousNumber + currentNumber);
+            //number ja existe na sequencia
+            if(seqFib.includes(number)) {
+                return `Número ${number} pertence a sequência.`;
+            //verifica se a sequencia ja estar maior do que precisa
+            }else if(seqFib[seqFib.length - 1] > number){
+                return `Número ${number} não pertence a sequência.`;
+            }else{
+                let result = fib(number);
+                return result;
+            }
         }
-
-        fib(input);
+        
+        console.log(fib(input));
     </script>
 </body>
 </html>
